@@ -5,11 +5,12 @@ import com.example.tomas.prooptyk.AndroidApp
 import com.example.tomas.prooptyk.injection.module.ActivityBuilder
 import com.example.tomas.prooptyk.injection.module.AppModule
 import com.example.tomas.prooptyk.injection.module.ViewModelModule
+import com.example.tomas.prooptyk.screen.login.LoginActivityViewModel
+import com.google.gson.Gson
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import javax.inject.Singleton
-import dagger.Binds
 
 
 
@@ -26,7 +27,8 @@ interface AppComponent {
     interface Builder {
         @BindsInstance fun application(app: Application): Builder
         fun build(): AppComponent
+        fun appModule(appModule: AppModule): Builder
     }
-
+    fun inject(loginActivityViewModel: LoginActivityViewModel)
     fun inject(app: AndroidApp)
 }

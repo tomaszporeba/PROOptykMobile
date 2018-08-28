@@ -6,6 +6,7 @@ import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import com.example.tomas.prooptyk.injection.component.DaggerAppComponent
+import com.example.tomas.prooptyk.injection.module.AppModule
 import javax.inject.Inject
 
 class AndroidApp: Application(), HasActivityInjector {
@@ -16,6 +17,7 @@ class AndroidApp: Application(), HasActivityInjector {
         super.onCreate()
 
         DaggerAppComponent.builder()
+                .appModule(AppModule())
                 .application(this)
                 .build()
                 .inject(this)
