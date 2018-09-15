@@ -1,6 +1,9 @@
 package com.example.tomas.prooptyk.injection.module
 
 import android.app.Application
+import android.arch.persistence.room.Room
+import com.example.tomas.prooptyk.data.ProOptykDatabase
+import com.example.tomas.prooptyk.data.UserResponseDao
 import com.example.tomas.prooptyk.network.ApiService
 import com.example.tomas.prooptyk.utils.BASE_URL
 import com.google.gson.FieldNamingPolicy
@@ -25,6 +28,17 @@ import javax.inject.Singleton
  */
 @Module
 class AppModule {
+
+
+    @Provides
+    @Singleton
+    fun provideProOptykDatabase(app: Application): ProOptykDatabase = Room.databaseBuilder(app,
+            ProOptykDatabase::class.java, "prooptyk_db").build()
+
+    @Provides
+    @Singleton
+    fun provideUserResponseDao(proOptykDatabase: ProOptykDatabase): UserResponseDao = proOptykDatabase.userResponseDao()
+
 
 
     @Provides
