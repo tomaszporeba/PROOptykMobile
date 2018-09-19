@@ -1,28 +1,20 @@
 package com.example.tomas.prooptyk.model
 
-import android.arch.persistence.room.ColumnInfo
-import android.arch.persistence.room.Entity
-import android.arch.persistence.room.ForeignKey
-import android.arch.persistence.room.PrimaryKey
+import android.arch.persistence.room.*
 import io.reactivex.annotations.NonNull
 
 
-@Entity(tableName = "userResponse", foreignKeys = arrayOf(ForeignKey(entity = User::class,
-        parentColumns = arrayOf("id"),
-        childColumns = arrayOf("userId"),
-        onDelete = ForeignKey.CASCADE)))
-class UserResponse {
+@Entity(tableName = "userResponse")
+data class UserResponse(
+        @NonNull
+        @PrimaryKey(autoGenerate = true)
+        @ColumnInfo(name = "id")
+        var id: Int = 0,
 
-    @NonNull
-    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id")
-    var id: Int = 0
+        @Ignore
+        var user: User? = null,
 
-    @ColumnInfo(name = "userId")
-    var userId: Int? = null
+        @ColumnInfo(name = "access_token")
+        var access_token: String? = ""
 
-    @ColumnInfo(name = "access_token")
-    var access_token: String = ""
-
-
-}
+)

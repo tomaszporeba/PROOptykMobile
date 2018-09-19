@@ -4,27 +4,24 @@ import android.arch.lifecycle.LiveData
 import android.arch.persistence.room.*
 import android.media.session.MediaSession
 import com.example.tomas.prooptyk.model.User
-import com.example.tomas.prooptyk.model.UserResponse
-
 
 @Dao
-interface UserResponseDao {
+abstract class UserResponseDao {
+
+
 
     @Insert
-    fun insertAll(userResponses: List<UserResponse>)
+    abstract fun insert(user: User?)
 
     @Update
-    fun update(userResponse : UserResponse)
+    abstract fun update(user: User)
 
     @Delete
-    fun delete(userResponse: UserResponse)
-
-    @Query("SELECT * from userResponse")
-    fun getUserResponses() : LiveData<List<UserResponse>>
-
-    @Query("SELECT * from userResponse WHERE access_token= :token limit 1")
-    fun getUserResponseByToken(token: String) : LiveData<UserResponse>
+    abstract fun delete(user: User)
 
     @Query("SELECT * from user WHERE username LIKE :username limit 1")
-    fun getUserByUsername(username: String) : LiveData<User>
+    abstract fun getUserByUsername(username: String) : LiveData<User>
+
+
+
 }

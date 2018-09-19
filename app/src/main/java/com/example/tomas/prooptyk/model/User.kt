@@ -6,13 +6,12 @@ import android.arch.persistence.room.PrimaryKey
 import io.reactivex.annotations.NonNull
 
 @Entity(tableName = "user")
-class User {
+data class User(
+        @PrimaryKey(autoGenerate = true)
+        @NonNull
+        @ColumnInfo(name = "id")
+        var id: Int = -1,
 
-    @PrimaryKey(autoGenerate = true)
-    @NonNull
-    @ColumnInfo(name = "id")
-    var id : Int = -1
-
-    @ColumnInfo(name = "username")
-    var username : String = ""
-}
+        @ColumnInfo(name = "username")
+        var username: String = ""
+)
