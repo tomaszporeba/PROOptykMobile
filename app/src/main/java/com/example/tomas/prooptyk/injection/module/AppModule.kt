@@ -11,7 +11,6 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
-import dagger.Reusable
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -33,7 +32,9 @@ class AppModule {
     @Provides
     @Singleton
     fun provideProOptykDatabase(app: Application): ProOptykDatabase = Room.databaseBuilder(app,
-            ProOptykDatabase::class.java, "prooptyk_db").build()
+            ProOptykDatabase::class.java, "prooptyk_database")
+            .fallbackToDestructiveMigration()
+            .build()
 
     @Provides
     @Singleton

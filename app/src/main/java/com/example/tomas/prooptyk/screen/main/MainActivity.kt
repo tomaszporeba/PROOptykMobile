@@ -10,7 +10,7 @@ class MainActivity : DaggerActivity() {
 
     private val compositeDisposable by lazy { CompositeDisposable() }
 
-    @Inject lateinit var mainActitivityViewModel: MainActitivityViewModel
+    @Inject lateinit var mainActivityViewModel: MainActivityViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

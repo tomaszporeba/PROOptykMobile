@@ -1,15 +1,20 @@
 package com.example.tomas.prooptyk.screen.login
 
+import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProvider
 import android.support.v7.app.AppCompatActivity
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import com.example.tomas.prooptyk.R
 import com.example.tomas.prooptyk.databinding.ActivityLoginBinding
 import com.example.tomas.prooptyk.injection.module.ActivityBuilder
+import com.example.tomas.prooptyk.screen.main.MainActivity
 import dagger.android.AndroidInjection
 import io.reactivex.disposables.CompositeDisposable
+import org.jetbrains.anko.intentFor
+import org.jetbrains.anko.startActivity
 import javax.inject.Inject
 
 class LoginActivity : AppCompatActivity() {
@@ -28,6 +33,11 @@ class LoginActivity : AppCompatActivity() {
         AndroidInjection.inject(this)
         val viewModel = ViewModelProviders.of(this, viewModelFactory).get(LoginActivityViewModel::class.java)
         binding.viewModel = viewModel
+
+
+        viewModel.sendLoginRequest.observe(this, Observer {
+            startActivity(intentFor<MainActivity>().setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK))
+        })
 
     }
 

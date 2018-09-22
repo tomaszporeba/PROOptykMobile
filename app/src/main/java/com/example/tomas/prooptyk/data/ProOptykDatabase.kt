@@ -6,7 +6,7 @@ import com.example.tomas.prooptyk.model.User
 import com.example.tomas.prooptyk.model.UserResponse
 
 
-@Database(entities = arrayOf(UserResponse::class, User::class), version = 1)
+@Database(entities = arrayOf(User::class), version = 1)
 abstract class ProOptykDatabase : RoomDatabase() {
 
     abstract fun userResponseDao() : UserResponseDao

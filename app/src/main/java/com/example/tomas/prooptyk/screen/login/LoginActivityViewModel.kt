@@ -2,6 +2,7 @@ package com.example.tomas.prooptyk.screen.login
 
 import android.app.Application
 import android.arch.lifecycle.LiveData
+import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
 import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
@@ -11,6 +12,7 @@ import com.example.tomas.prooptyk.data.UserResponseDao
 import com.example.tomas.prooptyk.model.User
 import com.example.tomas.prooptyk.model.UserResponse
 import com.example.tomas.prooptyk.network.ApiService
+import com.example.tomas.prooptyk.utils.SingleLiveEvent
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -32,7 +34,9 @@ class LoginActivityViewModel @Inject constructor() : ViewModel() {
     @Inject
     lateinit var userResponseDao: UserResponseDao
 
-    val compositeDisposable  = CompositeDisposable()
+    val sendLoginRequest = SingleLiveEvent<Any?>()
+
+    private val compositeDisposable  = CompositeDisposable()
 
     fun loginButtonListener() {
         val jsonParams = ArrayMap<String, String>()
@@ -57,19 +61,18 @@ class LoginActivityViewModel @Inject constructor() : ViewModel() {
                     try {
                         val usr = userResponse?.user as User
                         insertUser(usr)
-                        getUser()
                     } catch (exception : IOException) {
-
                     }
-
                 val prefs: SharedPreferences = application.getSharedPreferences("com.example.tomas.prooptyk", AppCompatActivity.MODE_PRIVATE)
                 prefs.edit().putString("accessToken", userResponse?.access_token)
                 prefs.edit().putBoolean("isLogged", true)
 
+                sendLoginRequest.call()
+
             }
         }
-
     }
+
 
     private fun getUser() {
         compositeDisposable.add(Observable.fromCallable {userResponseDao.getUserByUsername("marios")}

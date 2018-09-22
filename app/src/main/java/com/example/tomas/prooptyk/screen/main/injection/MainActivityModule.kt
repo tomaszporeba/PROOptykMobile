@@ -1,6 +1,6 @@
 package com.example.tomas.prooptyk.screen.main.injection
 
-import com.example.tomas.prooptyk.screen.main.MainActitivityViewModel
+import com.example.tomas.prooptyk.screen.main.MainActivityViewModel
 import dagger.Module
 import dagger.Provides
 
@@ -11,6 +11,6 @@ import dagger.Provides
 class MainActivityModule {
 
     @Provides
-    fun provideViewModel() = MainActitivityViewModel()
+    fun provideViewModel() = MainActivityViewModel()
 
 }
