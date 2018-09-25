@@ -9,12 +9,10 @@ import android.databinding.DataBindingUtil
 import android.os.Bundle
 import com.example.tomas.prooptyk.R
 import com.example.tomas.prooptyk.databinding.ActivityLoginBinding
-import com.example.tomas.prooptyk.injection.module.ActivityBuilder
 import com.example.tomas.prooptyk.screen.main.MainActivity
 import dagger.android.AndroidInjection
 import io.reactivex.disposables.CompositeDisposable
 import org.jetbrains.anko.intentFor
-import org.jetbrains.anko.startActivity
 import javax.inject.Inject
 
 class LoginActivity : AppCompatActivity() {

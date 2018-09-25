@@ -4,6 +4,7 @@ import android.app.Application
 import com.example.tomas.prooptyk.AndroidApp
 import com.example.tomas.prooptyk.injection.module.ActivityBuilder
 import com.example.tomas.prooptyk.injection.module.AppModule
+import com.example.tomas.prooptyk.injection.module.EyeglassAdapterModule
 import com.example.tomas.prooptyk.injection.module.ViewModelModule
 import com.example.tomas.prooptyk.screen.login.LoginActivityViewModel
 import com.example.tomas.prooptyk.screen.main.MainActivityViewModel
@@ -19,7 +20,7 @@ import javax.inject.Singleton
  */
 
 @Singleton
-@Component(modules = arrayOf(AndroidInjectionModule::class, AppModule::class, ActivityBuilder::class, ViewModelModule::class))
+@Component(modules = arrayOf(AndroidInjectionModule::class, AppModule::class, ActivityBuilder::class, ViewModelModule::class, EyeglassAdapterModule::class))
 interface AppComponent {
 
 
