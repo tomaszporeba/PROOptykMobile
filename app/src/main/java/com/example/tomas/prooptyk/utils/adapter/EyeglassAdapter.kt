@@ -30,6 +30,8 @@ class EyeglassAdapter : RecyclerView.Adapter<EyeglassViewHolder>() {
 
         val eyeglass = mEyeglassList?.get(position)
         val holderName = eyeglass?.holderName
+        val color = eyeglass?.color
         holder.holderName.text = holderName
+        holder.color.text = color
     }
 }

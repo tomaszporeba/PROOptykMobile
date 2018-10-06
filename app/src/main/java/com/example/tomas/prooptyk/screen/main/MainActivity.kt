@@ -5,9 +5,11 @@ import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
 import android.databinding.DataBindingUtil
 import android.os.Bundle
+import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import com.example.tomas.prooptyk.R
 import com.example.tomas.prooptyk.databinding.ActivityMainBinding
 import com.example.tomas.prooptyk.utils.adapter.EyeglassAdapter
@@ -45,14 +47,33 @@ class MainActivity : AppCompatActivity() {
             recyclerView!!.adapter = eyeglassAdapter
 
         })
-
-//        viewModel.getEyeglassList()
-
-
+        val bottomNavigation: BottomNavigationView = findViewById(R.id.navigationView)
+        bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
 
     }
 
+    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        when (item.itemId) {
+            R.id.navigation_eyeglasses -> {
+
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_clients -> {
+
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_examinations -> {
+
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_invoices -> {
+
+                return@OnNavigationItemSelectedListener true
+            }
+        }
+        false
+    }
     override fun onDestroy() {
         super.onDestroy()
         compositeDisposable.clear()

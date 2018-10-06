@@ -3,4 +3,8 @@
     <string name="login_button">Login</string>
     <string name="login_field">Email</string>
     <string name="password_field">Password</string>
+    <string name="bottom_eyeglasses">Eyeglasses</string>
+    <string name="bottom_clients">Clients</string>
+    <string name="bottom_examinations">Examinations</string>
+    <string name="bottom_invoices">Invoices</string>
 </resources>

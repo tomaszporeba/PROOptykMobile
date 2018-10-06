@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_eyeglasses"
+        android:icon="@drawable/glasses"
+        android:title="@string/bottom_eyeglasses"/>
+
+    <item
+        android:id="@+id/navigation_clients"
+        android:icon="@drawable/ic_baseline_supervisor_account_24px"
+        android:title="@string/bottom_clients"/>
+
+    <item
+        android:id="@+id/navigation_examinations"
+        android:icon="@drawable/ic_date_range_black_24dp"
+        android:title="@string/bottom_examinations"/>
+
+    <item
+        android:id="@+id/navigation_invoices"
+        android:icon="@drawable/ic_description_black_24dp"
+        android:title="@string/bottom_invoices"/>
+
+</menu>
