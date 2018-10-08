@@ -7,4 +7,7 @@
     <string name="bottom_clients">Clients</string>
     <string name="bottom_examinations">Examinations</string>
     <string name="bottom_invoices">Invoices</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

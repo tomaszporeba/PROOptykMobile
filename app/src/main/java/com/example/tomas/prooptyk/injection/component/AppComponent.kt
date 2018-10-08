@@ -2,15 +2,14 @@ package com.example.tomas.prooptyk.injection.component
 
 import android.app.Application
 import com.example.tomas.prooptyk.AndroidApp
-import com.example.tomas.prooptyk.injection.module.ActivityBuilder
-import com.example.tomas.prooptyk.injection.module.AppModule
-import com.example.tomas.prooptyk.injection.module.EyeglassAdapterModule
-import com.example.tomas.prooptyk.injection.module.ViewModelModule
+import com.example.tomas.prooptyk.injection.module.*
 import com.example.tomas.prooptyk.screen.login.LoginActivityViewModel
 import com.example.tomas.prooptyk.screen.main.MainActivityViewModel
+import com.example.tomas.prooptyk.screen.main.fragment.EyeglassFragmentViewModel
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
+import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
 
@@ -20,7 +19,7 @@ import javax.inject.Singleton
  */
 
 @Singleton
-@Component(modules = arrayOf(AndroidInjectionModule::class, AppModule::class, ActivityBuilder::class, ViewModelModule::class, EyeglassAdapterModule::class))
+@Component(modules = arrayOf(AndroidInjectionModule::class, AppModule::class, ActivityBuilder::class, ViewModelModule::class, EyeglassAdapterModule::class, FragmentModule::class, AndroidSupportInjectionModule::class))
 interface AppComponent {
 
 
@@ -32,5 +31,6 @@ interface AppComponent {
     }
     fun inject(loginActivityViewModel: LoginActivityViewModel)
     fun inject(mainActivityViewModel: MainActivityViewModel)
+    fun inject(eyeglassFragmentViewModel: EyeglassFragmentViewModel)
     fun inject(app: AndroidApp)
 }

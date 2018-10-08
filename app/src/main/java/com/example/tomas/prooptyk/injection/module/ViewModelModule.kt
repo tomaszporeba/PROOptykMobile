@@ -5,6 +5,7 @@ import android.arch.lifecycle.ViewModelProvider
 import android.util.Log
 import com.example.tomas.prooptyk.screen.login.LoginActivityViewModel
 import com.example.tomas.prooptyk.screen.main.MainActivityViewModel
+import com.example.tomas.prooptyk.screen.main.fragment.EyeglassFragmentViewModel
 import com.example.tomas.prooptyk.viewmodel.ViewModelKey
 import dagger.Binds
 import dagger.Module
@@ -63,6 +64,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(MainActivityViewModel::class)
     abstract fun bindMainActivityViewModel(mainViewModel: MainActivityViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(EyeglassFragmentViewModel::class)
+    abstract fun bindEyeglassFragmentViewModel(eyeglassViewModel: EyeglassFragmentViewModel): ViewModel
 
 
 }
