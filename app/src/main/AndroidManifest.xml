@@ -21,8 +21,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".InvoiceList" />
-        <activity android:name=".screen.main.MainActivity"></activity>
+        <activity android:name=".screen.main.MainActivity"
+            android:theme="@style/AppTheme"/>
     </application>
 
 </manifest>

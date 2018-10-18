@@ -8,8 +8,7 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.Toolbar
 import android.util.Log
 import com.example.tomas.prooptyk.R
 import com.example.tomas.prooptyk.databinding.ActivityMainBinding
@@ -17,6 +16,7 @@ import com.example.tomas.prooptyk.screen.main.fragment.EyeglassFragment
 import com.example.tomas.prooptyk.utils.adapter.EyeglassAdapter
 import dagger.android.AndroidInjection
 import io.reactivex.disposables.CompositeDisposable
+import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -37,6 +37,8 @@ class MainActivity : AppCompatActivity() {
         AndroidInjection.inject(this)
         val viewModel = ViewModelProviders.of(this, viewModelFactory).get(MainActivityViewModel::class.java)
         binding.viewModel = viewModel
+
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
 
 
         val bottomNavigation: BottomNavigationView = findViewById(R.id.navigationView)
