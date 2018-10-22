@@ -1,5 +1,6 @@
 package com.example.tomas.prooptyk.screen.login
 
+import android.annotation.SuppressLint
 import android.app.Application
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
@@ -46,7 +47,6 @@ class LoginActivityViewModel @Inject constructor() : ViewModel() {
         val body = RequestBody.create(okhttp3.MediaType.parse("application/json; charset=utf-8"), json)
         apiService.login(body)
                 .subscribeOn(Schedulers.io())
-
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeBy(
                         onError = { val dupa: String },
@@ -64,8 +64,10 @@ class LoginActivityViewModel @Inject constructor() : ViewModel() {
                     } catch (exception : IOException) {
                     }
                 val prefs: SharedPreferences = application.getSharedPreferences("com.example.tomas.prooptyk", AppCompatActivity.MODE_PRIVATE)
-                prefs.edit().putString("accessToken", userResponse?.access_token)
-                prefs.edit().putBoolean("isLogged", true)
+                val editor = prefs.edit()
+                editor.putString("accessToken", userResponse?.access_token)
+                editor.putBoolean("isLogged", true)
+                editor.commit()
 
                 sendLoginRequest.call()
 
