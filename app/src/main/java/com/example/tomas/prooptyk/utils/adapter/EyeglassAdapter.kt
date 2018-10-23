@@ -29,9 +29,9 @@ class EyeglassAdapter : RecyclerView.Adapter<EyeglassViewHolder>() {
     override fun onBindViewHolder(holder: EyeglassViewHolder, position: Int) {
 
         val eyeglass = mEyeglassList?.get(position)
-        val holderName = eyeglass?.holderName
+        val salon = eyeglass?.salon
         val color = eyeglass?.color
-        holder.holderName.text = holderName
+        holder.salon.text = salon
         holder.color.text = color
     }
 }

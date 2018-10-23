@@ -7,6 +7,6 @@ import com.example.tomas.prooptyk.R
 
 class EyeglassViewHolder(var layout: View) : RecyclerView.ViewHolder(layout) {
 
-    var holderName: TextView = layout.findViewById(R.id.holderName)
+    var salon: TextView = layout.findViewById(R.id.salon)
     var color : TextView = layout.findViewById(R.id.color)
 }

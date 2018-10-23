@@ -24,7 +24,7 @@ class EyeglassFragment : Fragment() {
     @Inject
     lateinit var viewModelFactory : ViewModelProvider.Factory
 
-    lateinit var binding: FragmentEyeglassBinding
+    private lateinit var binding: FragmentEyeglassBinding
 
     private var recyclerView : RecyclerView? = null
 
