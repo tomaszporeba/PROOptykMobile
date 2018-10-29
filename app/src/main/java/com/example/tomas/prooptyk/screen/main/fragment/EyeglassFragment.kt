@@ -44,6 +44,7 @@ class EyeglassFragment : Fragment() {
             recyclerView!!.layoutManager = LinearLayoutManager(this.activity)
             recyclerView!!.adapter = eyeglassAdapter
 
+
         })
         return binding.root
     }

@@ -25,7 +25,6 @@ class EyeglassFragmentViewModel @Inject constructor() : ViewModel() {
     lateinit var application: Application
 
     var mutableEyeglassArray = MutableLiveData<ArrayList<Eyeglass>>()
-    var eyeglassArray = ArrayList<Eyeglass>()
     fun getEyeglassList(): MutableLiveData<ArrayList<Eyeglass>> {
 
         val prefs: SharedPreferences = application.getSharedPreferences("com.example.tomas.prooptyk", AppCompatActivity.MODE_PRIVATE)

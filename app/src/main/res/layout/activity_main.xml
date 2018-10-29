@@ -36,7 +36,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="180dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/glasses"
+                    android:src="@drawable/cat_eyeglass"
                     app:layout_collapseMode="parallax" />
 
                 <android.support.v7.widget.Toolbar

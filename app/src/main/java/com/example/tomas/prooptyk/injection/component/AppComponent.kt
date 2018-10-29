@@ -19,7 +19,7 @@ import javax.inject.Singleton
  */
 
 @Singleton
-@Component(modules = arrayOf(AndroidInjectionModule::class, AppModule::class, ActivityBuilder::class, ViewModelModule::class, EyeglassAdapterModule::class, FragmentModule::class, AndroidSupportInjectionModule::class))
+@Component(modules = arrayOf(AndroidInjectionModule::class, AppModule::class, ActivityBuilder::class, ViewModelModule::class, EyeglassAdapterModule::class, FragmentModule::class, AndroidSupportInjectionModule::class, ContextModule::class))
 interface AppComponent {
 
 
@@ -28,6 +28,7 @@ interface AppComponent {
         @BindsInstance fun application(app: Application): Builder
         fun build(): AppComponent
         fun appModule(appModule: AppModule): Builder
+        fun contextModule(contextModule: ContextModule):Builder
     }
     fun inject(loginActivityViewModel: LoginActivityViewModel)
     fun inject(mainActivityViewModel: MainActivityViewModel)
