@@ -11,4 +11,6 @@ import com.example.tomas.prooptyk.model.UserResponse
 abstract class ProOptykDatabase : RoomDatabase() {
 
     abstract fun userResponseDao() : UserResponseDao
+
+    abstract fun eyeglassDao() : EyeglassDao
 }

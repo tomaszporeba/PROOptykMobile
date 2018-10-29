@@ -22,5 +22,9 @@
         <item name="android:textColorHint">@color/grey_border</item>
         <item name="android:windowActionBarOverlay">true</item>
     </style>
+    
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground" type="color">@color/colorPrimary</item>
+    </style>
 
 </resources>

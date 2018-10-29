@@ -4,6 +4,7 @@ import com.example.tomas.prooptyk.screen.login.LoginActivity
 import com.example.tomas.prooptyk.screen.login.injection.LoginActivityModule
 import com.example.tomas.prooptyk.screen.main.MainActivity
 import com.example.tomas.prooptyk.screen.main.injection.MainActivityModule
+import com.example.tomas.prooptyk.screen.splash.SplashActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

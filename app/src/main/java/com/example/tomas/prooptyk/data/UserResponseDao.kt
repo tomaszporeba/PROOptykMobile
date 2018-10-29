@@ -8,9 +8,7 @@ import com.example.tomas.prooptyk.model.User
 @Dao
 abstract class UserResponseDao {
 
-
-
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     abstract fun insert(user: User?)
 
     @Update

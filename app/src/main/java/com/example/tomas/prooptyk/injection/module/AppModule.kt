@@ -2,6 +2,7 @@ package com.example.tomas.prooptyk.injection.module
 
 import android.app.Application
 import android.arch.persistence.room.Room
+import com.example.tomas.prooptyk.data.EyeglassDao
 import com.example.tomas.prooptyk.data.ProOptykDatabase
 import com.example.tomas.prooptyk.data.UserResponseDao
 import com.example.tomas.prooptyk.network.ApiService
@@ -39,6 +40,10 @@ class AppModule {
     @Provides
     @Singleton
     fun provideUserResponseDao(proOptykDatabase: ProOptykDatabase): UserResponseDao = proOptykDatabase.userResponseDao()
+
+    @Provides
+    @Singleton
+    fun provideEyeglassDao(proOptykDatabase: ProOptykDatabase): EyeglassDao = proOptykDatabase.eyeglassDao()
 
 
 
