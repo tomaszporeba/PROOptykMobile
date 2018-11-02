@@ -17,6 +17,7 @@ class SplashActivity : AppCompatActivity() {
         doAsync {
             val prefs: SharedPreferences = getSharedPreferences("com.example.tomas.prooptyk", MODE_PRIVATE)
             val isLogged=prefs.getBoolean("isLogged", false)
+//            val isLogged=false
 
             uiThread {
                 if (isLogged){

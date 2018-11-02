@@ -3,6 +3,7 @@ package com.example.tomas.prooptyk.injection.module
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
 import android.util.Log
+import com.example.tomas.prooptyk.screen.eyeglass.EyeglassActivityViewModel
 import com.example.tomas.prooptyk.screen.login.LoginActivityViewModel
 import com.example.tomas.prooptyk.screen.main.MainActivityViewModel
 import com.example.tomas.prooptyk.screen.main.fragment.EyeglassFragmentViewModel
@@ -69,6 +70,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(EyeglassFragmentViewModel::class)
     abstract fun bindEyeglassFragmentViewModel(eyeglassViewModel: EyeglassFragmentViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(EyeglassActivityViewModel::class)
+    abstract fun binEyeglassActivityViewModel(eyeglassViewModel: EyeglassFragmentViewModel): ViewModel
 
 
 }

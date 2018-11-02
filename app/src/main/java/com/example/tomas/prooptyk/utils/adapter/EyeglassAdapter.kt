@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.tomas.prooptyk.R
 import com.example.tomas.prooptyk.model.Eyeglass
+import com.example.tomas.prooptyk.screen.eyeglass.EyeglassActivity
 import com.example.tomas.prooptyk.screen.login.LoginActivity
 import org.jetbrains.anko.intentFor
 
@@ -41,7 +42,7 @@ class EyeglassAdapter( context: Context) : RecyclerView.Adapter<EyeglassViewHold
         holder.salon.text = salon
         holder.color.text = color
 
-        holder.salon.setOnClickListener { context.startActivity(context.intentFor<LoginActivity>()) }
+        holder.salon.setOnClickListener { context.startActivity(context.intentFor<EyeglassActivity>()) }
 
     }
 }

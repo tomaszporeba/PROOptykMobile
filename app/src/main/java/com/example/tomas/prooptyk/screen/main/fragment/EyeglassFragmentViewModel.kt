@@ -1,6 +1,7 @@
 package com.example.tomas.prooptyk.screen.main.fragment
 
 import android.app.Application
+import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
 import android.arch.persistence.room.Dao
@@ -39,6 +40,7 @@ class EyeglassFragmentViewModel @Inject constructor() : ViewModel() {
         val prefs: SharedPreferences = application.getSharedPreferences("com.example.tomas.prooptyk", AppCompatActivity.MODE_PRIVATE)
         val token = prefs.getString("accessToken", "a")
 
+
         apiService.getAllEyeglasses("Bearer $token")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -61,7 +63,6 @@ class EyeglassFragmentViewModel @Inject constructor() : ViewModel() {
 
                 } catch (exception : IOException) {
                 }
-
             }
         }
         return mutableEyeglassArray

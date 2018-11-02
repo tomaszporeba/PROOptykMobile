@@ -1,5 +1,7 @@
 package com.example.tomas.prooptyk.injection.module
 
+import com.example.tomas.prooptyk.screen.eyeglass.EyeglassActivity
+import com.example.tomas.prooptyk.screen.eyeglass.injection.EyeglassActivityModule
 import com.example.tomas.prooptyk.screen.login.LoginActivity
 import com.example.tomas.prooptyk.screen.login.injection.LoginActivityModule
 import com.example.tomas.prooptyk.screen.main.MainActivity
@@ -19,4 +21,7 @@ abstract class ActivityBuilder {
 
     @ContributesAndroidInjector(modules = arrayOf(LoginActivityModule::class))
     abstract fun bindLoginActivity():LoginActivity
+
+    @ContributesAndroidInjector(modules = arrayOf(EyeglassActivityModule::class))
+    abstract fun bindEyeglassActivity():EyeglassActivity
 }

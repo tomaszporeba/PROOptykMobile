@@ -3,6 +3,7 @@ package com.example.tomas.prooptyk.injection.component
 import android.app.Application
 import com.example.tomas.prooptyk.AndroidApp
 import com.example.tomas.prooptyk.injection.module.*
+import com.example.tomas.prooptyk.screen.eyeglass.EyeglassActivityViewModel
 import com.example.tomas.prooptyk.screen.login.LoginActivityViewModel
 import com.example.tomas.prooptyk.screen.main.MainActivityViewModel
 import com.example.tomas.prooptyk.screen.main.fragment.EyeglassFragmentViewModel
@@ -33,5 +34,6 @@ interface AppComponent {
     fun inject(loginActivityViewModel: LoginActivityViewModel)
     fun inject(mainActivityViewModel: MainActivityViewModel)
     fun inject(eyeglassFragmentViewModel: EyeglassFragmentViewModel)
+    fun inject(eyeglassActivityViewModel: EyeglassActivityViewModel)
     fun inject(app: AndroidApp)
 }

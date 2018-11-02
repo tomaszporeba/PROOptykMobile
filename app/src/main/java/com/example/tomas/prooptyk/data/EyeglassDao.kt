@@ -1,4 +1,5 @@
 package com.example.tomas.prooptyk.data
+import android.arch.lifecycle.LiveData
 import android.arch.persistence.room.*
 import com.example.tomas.prooptyk.model.Eyeglass
 import android.arch.persistence.room.OnConflictStrategy
@@ -19,4 +20,7 @@ abstract class EyeglassDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     abstract fun insertEyeglasses(eyeglassArrayList: ArrayList<Eyeglass>?)
+//
+//    @Query("SELECT * from eyeglass")
+//    abstract fun getAllEyeglasses() : LiveData<ArrayList<Eyeglass>>
 }
