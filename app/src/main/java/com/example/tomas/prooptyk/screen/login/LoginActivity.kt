@@ -36,7 +36,6 @@ class LoginActivity : AppCompatActivity() {
         viewModel.sendLoginRequest.observe(this, Observer {
             startActivity(intentFor<MainActivity>().setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK))
         })
-
     }
 
     override fun onDestroy() {

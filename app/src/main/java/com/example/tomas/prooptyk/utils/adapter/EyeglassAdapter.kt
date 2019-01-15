@@ -10,9 +10,7 @@ import com.example.tomas.prooptyk.screen.eyeglass.EyeglassActivity
 import com.example.tomas.prooptyk.screen.login.LoginActivity
 import org.jetbrains.anko.intentFor
 
-class EyeglassAdapter( context: Context) : RecyclerView.Adapter<EyeglassViewHolder>() {
-
-    private val context = context
+class EyeglassAdapter(private val context: Context) : RecyclerView.Adapter<EyeglassViewHolder>() {
 
     private var mEyeglassList : ArrayList<Eyeglass>? = null
 
@@ -42,7 +40,7 @@ class EyeglassAdapter( context: Context) : RecyclerView.Adapter<EyeglassViewHold
         holder.salon.text = salon
         holder.color.text = color
 
-        holder.salon.setOnClickListener { context.startActivity(context.intentFor<EyeglassActivity>()) }
+        holder.salon.setOnClickListener { context.startActivity(context.intentFor<EyeglassActivity>("id" to position)) }
 
     }
 }

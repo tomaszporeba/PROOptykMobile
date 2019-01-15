@@ -11,13 +11,14 @@ class Eyeglass(
         @PrimaryKey(autoGenerate = true)
         @NonNull
         @ColumnInfo(name = "eyeglass")
-        var Id : Int? = -1,
 
         var holderName : String? = "",
 
         var purchasePrice : Double? = -1.0,
 
         var clientPrice : Double? = -1.0,
+
+        var id : Int? = -1,
 
         var vat : String? = "",
 

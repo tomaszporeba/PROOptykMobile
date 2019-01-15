@@ -21,6 +21,6 @@ abstract class EyeglassDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     abstract fun insertEyeglasses(eyeglassArrayList: ArrayList<Eyeglass>?)
 //
-//    @Query("SELECT * from eyeglass")
-//    abstract fun getAllEyeglasses() : LiveData<ArrayList<Eyeglass>>
+    @Query("SELECT * from eyeglass where id=:id")
+    abstract fun getEyeglassById(id: Int?) : LiveData<Eyeglass>
 }

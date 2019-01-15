@@ -22,7 +22,6 @@ import javax.inject.Inject
 
 class EyeglassFragmentViewModel @Inject constructor() : ViewModel() {
 
-
     @Inject
     lateinit var apiService: ApiService
 

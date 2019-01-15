@@ -74,7 +74,7 @@ abstract class ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey(EyeglassActivityViewModel::class)
-    abstract fun binEyeglassActivityViewModel(eyeglassViewModel: EyeglassFragmentViewModel): ViewModel
+    abstract fun bindEyeglassActivityViewModel(eyeglassActivityViewModel: EyeglassActivityViewModel): ViewModel
 
 
 }
